@@ -1,0 +1,13 @@
+{
+  "name": "mrn-marketplace",
+  "description": "Mouli's personal Claude Code plugin marketplace",
+  "owner": { "name": "Mouli R N", "email": "rnmouli4@gmail.com" },
+  "plugins": [
+    {
+      "name": "mrn-agents-workflow",
+      "description": "Subagent-first orchestration: 7 dedicated agents (Explore, general-purpose, analyst, developer, builder, tester, review) plus a PreToolUse hook that keeps the main thread chat-only.",
+      "author": { "name": "Mouli R N", "email": "rnmouli4@gmail.com" },
+      "source": "./mrn-agents-workflow"
+    }
+  ]
+}
