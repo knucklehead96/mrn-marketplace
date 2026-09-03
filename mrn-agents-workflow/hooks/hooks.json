@@ -4,7 +4,7 @@
       {
         "matcher": "Read|Grep|Glob|Edit|Write|Bash|mcp__.*",
         "hooks": [
-          { "type": "command", "command": "${CLAUDE_PLUGIN_ROOT}/hooks/enforce-subagent-first.sh" }
+          { "type": "command", "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/enforce-subagent-first.sh" }
         ]
       }
     ]
