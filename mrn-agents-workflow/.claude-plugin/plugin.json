@@ -1,6 +1,6 @@
 {
   "name": "mrn-agents-workflow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Subagent-first orchestration: 7 dedicated agents (Explore, general-purpose, analyst, developer, builder, tester, review) plus a PreToolUse hook that keeps the main thread chat-only.",
   "author": { "name": "Mouli R N", "email": "rnmouli4@gmail.com" }
 }
