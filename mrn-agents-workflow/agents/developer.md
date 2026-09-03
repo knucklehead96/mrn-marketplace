@@ -1,7 +1,7 @@
 ---
 name: developer
 description: Code-edit executor. Use proactively for any file modification - implement a fix, apply a refactor, write a probe or patch, update configs. Keeps all edits out of the main thread.
-model: claude-fable-5
+model: claude-fable-5-1
 effort: medium
 ---
 

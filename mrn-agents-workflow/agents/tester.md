@@ -1,7 +1,7 @@
 ---
 name: tester
 description: Test executor. Use proactively to run test suites, integration tests, or on-target verification - execute the tests, judge pass/fail from the actual output, and report results with evidence. Keeps test output out of the main thread.
-model: claude-sonnet-4-6[1m]
+model: claude-sonnet-5[1m]
 effort: high
 ---
 

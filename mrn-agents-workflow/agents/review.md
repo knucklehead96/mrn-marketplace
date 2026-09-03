@@ -1,7 +1,7 @@
 ---
 name: review
 description: Code reviewer. Use proactively before merging or pushing a change, after a developer agent lands edits, or when the user asks for a review, a second opinion, or "does this look right". Finds correctness bugs first, then reuse/simplification/efficiency cleanups. Strictly read-only, never edits files.
-model: claude-fable-5
+model: claude-fable-5-1
 effort: xhigh
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: builder
 description: Build executor. Use proactively for any build or compile task - run the project's build system (make, cmake, npm, cargo, gradle, ...), monitor the output, and report results. Keeps long build output out of the main thread.
-model: claude-sonnet-4-6[1m]
+model: claude-sonnet-5[1m]
 effort: medium
 ---
 
