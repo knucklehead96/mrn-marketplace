@@ -1,6 +1,6 @@
 #!/bin/bash
 # Subagent-first enforcement (mrn-style): main thread is chat-only.
-# Denies Read/Grep/Glob/Edit/Write/Bash/NotebookEdit and ALL MCP tools (mcp__*)
+# Denies Read/Grep/Glob/Edit/Write/Bash/NotebookEdit/WebFetch/WebSearch and ALL MCP tools (mcp__*)
 # on the MAIN thread; allows everything inside subagents.
 # Discriminator: hook input carries agent_id only when fired inside a subagent.
 
@@ -24,7 +24,7 @@ TOOL=$(echo "$INPUT" | jq -r '.tool_name // empty')
 # else (TaskOutput, TaskStop, Monitor, ...) is allowed on the main thread —
 # the harness may invoke this hook for tools outside hooks.json's matcher.
 case "$TOOL" in
-  Read|Grep|Glob|Edit|Write|Bash|NotebookEdit|mcp__*) ;;
+  Read|Grep|Glob|Edit|Write|Bash|NotebookEdit|WebFetch|WebSearch|mcp__*) ;;
   *) exit 0 ;;
 esac
 
@@ -62,4 +62,4 @@ if [ -n "$TARGET" ]; then
   esac
 fi
 
-deny "mrn-style: main thread is chat-only. Delegate this $TOOL: file reads/searches → Explore; root cause analysis → analyst; code edits → developer; builds → builder; on-target/integration tests → tester; general shell/git → general-purpose."
+deny "mrn-style: main thread is chat-only. Delegate this $TOOL: file reads/searches → Explore; root cause analysis → analyst; code edits → developer; builds → builder; on-target/integration tests → tester; general shell/git → general-purpose; web lookups → general-purpose."

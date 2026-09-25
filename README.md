@@ -9,7 +9,7 @@ A personal [Claude Code](https://claude.com/claude-code) plugin marketplace.
 Subagent-first orchestration: the main conversation stays chat-only and all work is delegated to dedicated agents.
 
 - **Agents:** `Explore` (search), `general-purpose` (shell/git), `analyst` (root cause), `developer` (code edits), `builder` (builds), `tester` (tests), `review` (code review)
-- **Hook:** a PreToolUse hook that blocks file and shell tools on the main thread and points to the right agent
+- **Hook:** a PreToolUse hook that blocks file, shell, web, and MCP tools on the main thread and points to the right agent
 - **`/setup` skill:** installs a status line and recommended settings into `~/.claude`
 - **`/commit` skill:** commits current changes as `<module/file>: title` (≤50 chars) plus a 2-line body (≤80 chars per line)
 
