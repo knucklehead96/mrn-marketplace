@@ -4,10 +4,10 @@
   "owner": { "name": "Mouli R N", "email": "rnmouli4@gmail.com" },
   "plugins": [
     {
-      "name": "mrn-agents-workflow",
-      "description": "Subagent-first orchestration: 7 dedicated agents (Explore, general-purpose, analyst, developer, builder, tester, review) plus a PreToolUse hook that keeps the main thread chat-only.",
+      "name": "agents-workflow",
+      "description": "Subagent-first orchestration: 7 dedicated agents (Explore, general-purpose, analyst, developer, builder, tester, review), a PreToolUse hook that keeps the main thread chat-only, a /setup skill that installs the mrn status line and recommended settings, and a /commit skill with a fixed message format.",
       "author": { "name": "Mouli R N", "email": "rnmouli4@gmail.com" },
-      "source": "./mrn-agents-workflow"
+      "source": "./agents-workflow"
     }
   ]
 }

@@ -4,9 +4,14 @@
 # on the MAIN thread; allows everything inside subagents.
 # Discriminator: hook input carries agent_id only when fired inside a subagent.
 
-if ! command -v jq >/dev/null 2>&1; then
-  echo "enforce-subagent-first.sh: jq not found on PATH, failing open" >&2
+deny() {
+  printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"%s"}}\n' "$1"
   exit 0
+}
+
+# Fail closed: without jq the input can't be parsed, so nothing is allowed.
+if ! command -v jq >/dev/null 2>&1; then
+  deny "mrn-style: enforce-subagent-first hook requires jq. Install it (e.g. sudo apt install jq) and retry."
 fi
 
 INPUT=$(cat)
@@ -57,5 +62,4 @@ if [ -n "$TARGET" ]; then
   esac
 fi
 
-printf '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"mrn-style: main thread is chat-only. Delegate this %s: file reads/searches → Explore; root cause analysis → analyst; code edits → developer; builds → builder; on-target/integration tests → tester; general shell/git → general-purpose."}}\n' "$TOOL"
-exit 0
+deny "mrn-style: main thread is chat-only. Delegate this $TOOL: file reads/searches → Explore; root cause analysis → analyst; code edits → developer; builds → builder; on-target/integration tests → tester; general shell/git → general-purpose."

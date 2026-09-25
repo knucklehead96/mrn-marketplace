@@ -1,7 +1,7 @@
 ---
 name: analyst
 description: Root-cause analyst for failures, bugs, and regressions. Use proactively when debugging a failure, triaging a bug, or answering "why" - reads code, logs, and project documentation to build an evidence-backed causal chain. Strictly read-only, never edits files.
-model: claude-fable-5-1
+model: claude-opus-5-5
 effort: xhigh
 ---
 
